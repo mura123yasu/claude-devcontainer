@@ -5,7 +5,7 @@
 ## 構成
 
 - `.devcontainer/devcontainer.json` — devcontainer 設定。Ubuntu 24.04 ベース、Node.js LTS、GitHub CLI を含む
-- `.claude/settings.json` — Claude Code の auto mode 用 permissions 設定（全ツール許可）
+- `.claude/settings.json` — Claude Code の `permissionMode: "auto"` 設定
 - `.gitignore` — 認証情報・ローカル設定を除外
 
 ## 認証
@@ -14,4 +14,4 @@
 
 ## Auto Mode の仕組み
 
-`.claude/settings.json` で Bash・ファイル操作・Web 取得など全ツールを許可済みのため、`claude` コマンド起動後に許可プロンプトは表示されない。
+`.claude/settings.json` で `permissionMode: "auto"` を設定している。これは Claude Code のネイティブな auto mode であり、`claude --permission-mode auto` と同等。個別ツールを列挙する代わりに、Claude Code 本体の動作モードとして許可プロンプトなしで動作する。
